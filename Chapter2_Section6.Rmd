@@ -1,0 +1,42 @@
+---
+title: "Chapter 2, Section 6"
+output:
+  html_notebook: default
+  html_document: default
+  pdf_document:
+    keep_tex: yes
+---
+
+```{r include=FALSE} 
+knitr::opts_chunk$set(options(scipen = 999))
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r}
+library(binaryLogic)
+
+subsets <- function(set) { 
+  set_length <- length(set)
+  for (s in c(0:(2**set_length-1))) {
+      print(which(set & c(as.binary(s, n=set_length)), arr.ind = F))
+    } 
+  
+}
+
+subsets(c(4,3,2,1))
+
+```
+
+1. $$$$ 
+2. $$2^{35} = `r n <- 2**35; format(n, decimal.mark=",", big.mark=",")`$$
+3. $$2^7 = `r n <- 2**7; n`$$
+4. $$2 \cdot 2^8 = `r n <- 2 * 2**8; n`$$
+5. $$2^{10} - 1 = `r n <- 2**10 - 1; n`$$
+6. $$2^8 - 8 - 1 = `r n <- 2**8 - 8 - 1; n`$$
+7.
+    a. $$2^{2^3} = `r n <- 2**(2**3); n`$$ 
+    b. $$2^{2^n}$$ 
+7.
+    a. $$2^{2^3} = `r n <- 2**(2**3); n`$$ 
+    b. $$2^{2^n}$$ 
+   

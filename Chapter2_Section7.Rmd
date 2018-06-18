@@ -1,0 +1,70 @@
+---
+title: "Chapter 2, Section 7"
+output:
+  html_notebook: default
+  html_document: default
+  pdf_document:
+    keep_tex: yes
+---
+
+```{r include=FALSE} 
+knitr::opts_chunk$set(options(scipen = 999))
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r}
+library(binaryLogic)
+
+subsets <- function(set) { 
+  set_length <- length(set)
+  for (s in c(0:(2**set_length-1))) {
+      print(which(set & c(as.binary(s, n=set_length)), arr.ind = F))
+    } 
+  
+}
+
+subsets(c(4,3,2,1))
+
+```
+
+1. $\binom{10}{5} = `r n <- choose(10,5); n`$ 
+2. $\binom{50}{7} = `r n <- choose(50,7); n`$
+3. 
+   a. $\binom{6}{3} = `r n <- choose(6,3); n`$
+   b. $\binom{7}{4} = `r n <- choose(7,4); n`$
+   c. $\binom{5}{1} = `r n <- choose(5,1); n`$
+   d. $\binom{2}{4} = `r n <- choose(2,4); n`$
+4. $\binom{n}{1} = n$
+5. 
+    a. $\binom{5}{2} = `r n <- choose(5,2); n`$
+    b. Enumeration: $\{1,2\}, \{1,3\}, \{1,4\}, \{1,5\}, \{2,3\}, \{2,4\}, \{2,5\}, \{3,4\}, \{3,5\}, \{4,5\}$
+11.
+   a. $\binom{8}{4} = `r n <- choose(8,4); n`$
+   b. $\frac{\binom{8}{4}}{2} = `r n <- choose(8,4)/2; n`$
+   c. $2^8 - 2 = `r n <- 2**8 - 2; n`$
+12. $\binom{6}{3} = `r n <- choose(6,3); n`$ or $\frac{6!}{3! \cdot 3!} = `r n <- factorial(6)/(factorial(3)*factorial(3)); n`$ 
+13.
+   a. $\binom{10}{5} = `r n <- choose(10,5); n`$
+   b. $2^{10}-2 = `r n <- 2**10-2; n`$
+14. $8! \cdot (\binom{20}{5} \cdot \binom{6}{3} + \binom{20}{4} \cdot \binom{6}{4} + \binom{20}{3} \cdot \binom{6}{5}) = `r n <- 8 * (choose(20,5) * choose(6,3) + choose(20,4) * choose(6,4) + choose(20,3) * choose(6,5)); n`$
+15. $5(9 \cdot 8 \cdot 4) + 4(9 \cdot 8 \cdot 5) = `r n <- 5*9*8*4 + 4*9*8*5; n`$
+16.
+    a. $\binom{7}{3} \cdot \binom{4}{2} = `r n <- choose(7,3) * choose(4,2); n`$
+    b. $\binom{7}{1} \cdot \binom{4}{1} + \binom{7}{2} \cdot \binom{4}{2} + \binom{7}{3} \cdot \binom{4}{3} + \binom{7}{4} \cdot \binom{4}{4} = `r n <- sum(choose(7, 1:4) * choose(4, 1:4)); n`$
+    c. $\binom{10}{3} = `r n <- choose(10,3); n`$
+    d. $\binom{7}{2} \cdot \binom{4}{2} - 6 \cdot 3 = `r n <- choose(7,2) * choose(4,2) - 6 * 3; n`$
+17.  
+    a)  
+        i. $\binom{9}{5} = `r n <- choose(9,5); n`$. To verify, it should equal $\binom{9}{4} = `r n <- choose(9,4); n`$
+        ii. 6
+        iii. 2
+        iv. 1
+    b) $J,J,J,J,J,C++,C++,C++,C++$ (cost is 5 units)
+    c)
+        i. $9! = `r n <- factorial(9); n`$
+        ii. $6 \cdot 4! \cdot 5! = `r n <- 6 * factorial(4) * factorial(5); n`$
+        iii. $2 \cdot 4! \cdot 5! = `r n <- 2 * factorial(4) * factorial(5); n`$
+        iv. $4! \cdot 5! = `r n <- factorial(4) * factorial(5); n`$
+18.
+    a) $\left(\binom{3}{1} \cdot \binom{27}{2} + \binom{3}{2} \cdot \binom{27}{1} + \binom{3}{3}\right) \cdot \left(\binom{12}{1} \cdot \binom{138}{2} + \binom{12}{2} \cdot \binom{138}{1} + \binom{3}{3}\right) = `r n <- (choose(3,1) * choose(27,2) + choose(3,2) * choose(27,1) + choose(3,3)) * (choose(12,1) * choose(138,2) + choose(12,2) * choose(138,1) + choose(3,3)); n`$
+    b) $\binom{30}{3} \cdot \binom{150}{3} - \binom{27}{3} \cdot \binom{138}{3} = `r n <- choose(30,3) * choose(150,3) - choose(27,3) * choose(138,3);n`$

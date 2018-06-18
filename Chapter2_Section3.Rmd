@@ -1,0 +1,31 @@
+---
+title: "Chapter 2, Section 3"
+output:
+  pdf_document:
+    keep_tex: yes
+  html_notebook: default
+  html_document: default
+---
+
+```{r include=FALSE} 
+knitr::opts_chunk$set(options(scipen = 999))
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+3. 
+    a. 123, 132, 213, 231, 312, 321
+    b. too boring
+2. $$4! = `r n <- factorial(4); n`$$
+3. $$(n-2)!$$
+4. (skipped)
+5. $$\frac{4!}{2} = `r n <- factorial(4)/2; n`$$
+6.
+    a. $$4! = `r n <- factorial(4); n`$$
+    b. $$(n-2)!$$
+7. $$3! = `r n <- factorial(3); n`$$
+8.
+    a. $$\frac{3! \cdot 3!}{2} = `r n <- (factorial(3)**2)/2; n`$$
+    b. $$\frac{n! \cdot n!}{2}$$
+9. 
+    a. $$5! \cdot 5! = `r n <- factorial(5) * factorial(5); n`$$
+    b. $$10! = `r n <- factorial(10); n`$$

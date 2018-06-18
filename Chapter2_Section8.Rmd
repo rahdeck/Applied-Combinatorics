@@ -1,0 +1,100 @@
+---
+title: "Chapter 2, Section 8"
+output:
+  html_notebook: default
+  html_document: default
+  pdf_document:
+    keep_tex: yes
+---
+
+```{r include=FALSE} 
+knitr::opts_chunk$set(options(scipen = 999))
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, include=FALSE}
+library(binaryLogic)
+
+subsets <- function(set) { 
+  set_length <- length(set)
+  for (s in c(0:(2**set_length-1))) {
+      print(which(set & c(as.binary(s, n=set_length)), arr.ind = F))
+    } 
+  
+}
+
+subsets(c(4,3,2,1))
+
+```
+
+1. 
+    a. Not equally likely. Cities' populations differ. Residents of LA are more likely to be chosen than residents of Bakersfield.
+    b. Not equally likely. Placebo is more likely to be chosen because there are more of them (3 out of 5).
+    c. Equally likely. Each snowflake is unique.
+    d. Not equally likely. The sum frequencies are:
+    
+     |  sum      | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 
+     |----------:|--:|--:|--:|--:|--:|--:|--:|--:|---:|---:|---:|
+     | frequency | 1 | 2 | 3 | 4 | 5 | 6 | 5 | 4 |  3 |  2 |  1 |
+    e. Not equally likely. The sum frequencies are:
+    
+     |  sum      | 0 | 1 | 2 | 3 |
+     |----------:|--:|--:|--:|--:|
+     | frequency | 1 | 3 | 3 | 1 |
+     
+2.
+    a. $\frac{\vert\{1,3,5\}\vert}{\vert\{1,2,3,4,5,6\}\vert} = \frac{3}{6} = \frac{1}{2}$
+    b. $\frac{\vert\{1,2\}\vert}{\vert\{1,2,3,4,5,6\}\vert} = \frac{2}{6} = \frac{1}{3}$
+    c. $\frac{\vert\{3,6\}\vert}{\vert\{1,2,3,4,5,6\}\vert} = \frac{2}{6} = \frac{1}{3}$
+    
+3.
+    a. $\frac{\binom{3}{2}}{2^3} = \frac{`r n<- choose(3,2); n`}{`r n <- 2**3; n`} = `r n <- choose(3,2)/2**3; n`$
+    b. $\frac{\binom{3}{2} + \binom{3}{3}}{2^3} = \frac{`r n<- choose(3,2) + choose(3,3); n`}{`r n <- 2**3; n`} = `r n <- (choose(3,2) + choose(3,3))/2**3; n`$
+    c. $\frac{\binom{3}{2}}{2^3} + \frac{\binom{3}{2}}{2^3} = \frac{`r n <- choose(3,2); n`}{`r n <- 2**3; n`} + \frac{`r n <- choose(3,2); n`}{`r n <- 2**3; n`}= `r n <- choose(3,2)/2**3; n` + `r n <- choose(3,2)/2**3; n` = `r n <- choose(3,2)/2**3 + choose(3,2)/2**3; n`$
+    
+4. $\frac{\binom{3}{3} + \binom{3}{2} \cdot 2}{27} = \frac{`r n <- choose(3,3) + choose(3,2) * 2; n`}{`r n <- 3**3; n`}$ or 1 - P(0 blondes) - P(1 blonde) = $1 - \frac{2^3}{27} - \frac{\binom{3}{1} \cdot 2^2}{27} = \frac{7}{27}$
+
+5. P(<= 3 heads) = 1 - P(4 heads) = $1 - \frac{1}{2^4} = 1 - \frac{1}{`r n <- 2**4; n`} = \frac{15}{16}$ or `r n <- 1 - 1/2**4; n`
+
+6. P(4 A's) + P(5 A's) = $\frac{3 \cdot \binom{4}{5} + \binom{5}{5}}{4^5} = \frac{`r n <- 3 * choose(5,4); n` + `r n <- choose(5,5); n`}{`r n<- 4**5; n`} = \frac{`r n <- 3 * choose(5,4) + choose(5,5); n`}{`r n <- 4**5; n`} = \frac{1}{64}$
+
+7. P(K or Q) = $\frac{8}{52} = \frac{2}{13}$
+
+8. $\frac{4}{52} \cdot \frac{4}{52} = \frac{1}{`r n <- 13 * 13; n`}$
+
+9. $\frac{\binom{4}{3} + \binom{4}{4}}{2^4} = \frac{`r n <- choose(4,3) + choose(4,4); n`}{`r n <- 2**4; n`}$
+
+10. $1 - \frac{2 + 1}{2^3} = \frac{5}{8}$
+
+11. $\frac{\binom{4}{3} + \binom{4}{4}}{2^4} = \frac{`r n <- choose(4,3) + choose(4,4); n`}{`r n <- 2**4; n`}$
+
+12. $\frac{\binom{3}{2} + \binom{3}{3}}{2^4} = \frac{`r n <- choose(3,2) + choose(3,3); n`}{`r n <- 2**4; n`} = \frac{1}{4}$
+
+13. $1 - \frac{1 + 3 + 7}{2^5} = 1 - \frac{`r n <- 1 + 3 + 7; n`}{`r n <- 2**5; n`} = \frac{21}{32}$
+
+14. This has been the hardest but also the most enjoyable question in this section so far.
+
+  * All possible choice of 4 gloves: $\binom{20}{4} = `r n <- choose(20, 4); n`$. This is our denominator.
+  * All possible choices of 4 gloves resulting in two pairs being selected: $\binom{10}{2} = `r n <- choose(10, 2); n`$, as there are 10 pairs and you need to select any two of them
+  * All possible choices of 4 gloves resulting in one pair being selected: $\binom{10}{1} * \left(\binom{18}{2} - 9\right) = `r n <- choose(10,1) * (choose(18,2) - 9); n`$, where $\binom{10}{1}$ is a choice of single pair (1 out of 10, so 10 ways of doing it) and then the choice of remaining 2 gloves out of 18 remaining, excluding the choice of 2 gloves in the same pair from 9 remaining pairs (because this possiblity has been accounted for above, in the selection of 2 pairs at the same time)
+
+$$\frac{\binom{10}{2} + \left(\binom{10}{1} * \left(\binom{18}{2} - 9\right)\right)}{\binom{20}{4}} = `r n <- (choose(10, 2) + choose(10,1) * (choose(18,2) - 9))/choose(20,4); n`$$
+
+The answer in the book is: $\frac{\frac{20 \cdot 18 \cdot 16 \cdot 14}{4!}}{\binom{20}{4}}$, which looks like the complement of the question, i.e. probability of not getting any pair of gloves (First you choose any of 20, then any of 18 (so as not to get a pair), etc). Then the probability of getting at least one pair is $1 - \frac{\frac{20 \cdot 18 \cdot 16 \cdot 14}{4!}}{\binom{20}{4}} = `r n <- 1 - ((20*18*16*14)/factorial(4))/choose(20,4); n`$. This solution is a much nicer way of getting to the result than mine though.
+
+Just for additional fun, here's a plot of probability of getting at least one pair out of 10 pairs when drawing $n$ gloves:
+
+```{r}
+d <- data.frame(n=1:20)
+z <- function(x) { 1 - ((prod(seq(20, 20-2*(x-1), by=-2)))/factorial(x))/choose(20,x) }
+v_prob <- Vectorize(z, "x")
+d$probability <- v_prob(d$n)
+plot(d, type='o')
+```
+
+15. 
+    a. P(2H) + P(3H) - P(3H) = $\frac{\binom{6}{2} + \binom{6}{3}}{2^6} = \frac{`r n <- choose(6,2) + choose(6,3); n`}{`r n <- 2**6; n`} = `r n <- (choose(6,2) + choose(6,3))/2**6; n`$
+    b. P(2H) + P(2T) = $\frac{\binom{6}{2} + \binom{6}{2}}{2^6} = \frac{`r n <- choose(6,2) + choose(6,2); n`}{`r n <- 2**6; n`} = `r n <- choose(6,2)*2/2**6; n`$
+    c. $\frac{\binom{6}{2} + 2^5 - \binom{5}{1}}{2^6} = \frac{`r n <- choose(6,2) + 2**5 - choose(5,1); n`}{`r n <- 2**6; n`}$
+    d. $\frac{\binom{6}{0} + \binom{6}{2} + \binom{6}{4} + \binom{6}{6}}{2^6} = \frac{`r n <- choose(6,0) + choose(6,2) + choose(6,4) + choose(6,6); n`}{`r n <- 2**6; n`}$
+    e. $\frac{\binom{5}{1} + \binom{5}{3} + \binom{5}{5}}{2^5} = \frac{`r n <- choose(5,1) + choose(5,3) + choose(5,5); n`}{`r n <- 2**6; n`}$

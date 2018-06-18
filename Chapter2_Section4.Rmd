@@ -1,0 +1,26 @@
+---
+title: "Chapter 2, Section 4"
+output:
+  html_notebook: default
+  html_document: default
+  pdf_document:
+    keep_tex: yes
+---
+
+```{r include=FALSE} 
+knitr::opts_chunk$set(options(scipen = 999))
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+1. $$\frac{25!}{365 \cdot 24 \cdot 3600 \cdot 10e9} = `r n <- factorial(25)/(365*24*3600*10e9); n`$$
+2. $$\frac{25!}{365 \cdot 24 \cdot 3600 \cdot 10e11} = `r n <- factorial(25)/(365*24*3600*10e11); n`$$
+3. $$O(n!)$$
+4. $$O(n!)$$
+5. $$1, 2, 4, 3, 1$$
+6. $$$$
+7.
+    a. $$n \cdot 3 \cdot 10^-9$$
+    b. $$\frac{n+1}{2} \cdot 3 \cdot 10^-9$$
+8.
+    a. $$n \cdot 3 \cdot 10^-11$$
+    b. $$\frac{n+1}{2} \cdot 3 \cdot 10^-11$$

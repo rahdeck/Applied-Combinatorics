@@ -1,0 +1,13 @@
+---
+title: "Chapter 2, Section 9"
+output:
+  html_notebook: default
+  html_document: default
+  pdf_document:
+    keep_tex: yes
+---
+
+```{r include=FALSE} 
+knitr::opts_chunk$set(options(scipen = 999))
+knitr::opts_chunk$set(echo = FALSE)
+```

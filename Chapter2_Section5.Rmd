@@ -1,0 +1,34 @@
+---
+title: "Chapter 2, Section 5"
+output:
+  html_notebook: default
+  html_document: default
+  pdf_document:
+    keep_tex: yes
+---
+
+```{r include=FALSE} 
+knitr::opts_chunk$set(options(scipen = 999))
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+1. 
+    a. $$P(3,2) = 3 \cdot 2 = `r n <- 3*2; n`$$
+    b. $$P(5,3) = 5 \cdot 4 \cdot 3 = `r n <- 5*4*3; n`$$
+    c. $$P(8,5) = 8 \cdot 7 \cdot 6 \cdot 5 \cdot 4 = `r n <- 8*7*6*5*4; n`$$
+    d. $$P(1,3) = 0$$
+2. 
+    a. $$6 \cdot 6 \cdot 6 = `r n <- 6**3; n`$$
+    b. $$6 \cdot 5 \cdot 4 = `r n <- 6*5*4; n`$$
+    c. $$1 \cdot 6 \cdot 6 = `r n <- 1*6*6; n`$$
+    d. $$P(5,2) = 5 \cdot 4 = `r n <- 5 * 4; n`$$
+3. 
+    a. $$8^4 = `r n <- 8**4; n`$$
+    b. $$P(8,4) = 8 \cdot 7 \cdot 6 \cdot 5 = `r n <- 8*7*6*5; n`$$
+    c. $$8^3 = `r n <- 8**3; n`$$
+    d. $$1 \cdot 6 \cdot 5 \cdot 1 = `r n <- 6 * 5; n`$$
+4. $$20 \cdot \ 19 \cdot 18 \cdot 17 \cdot 16 = `r n <- 20*19*18*17*16; n`$$
+5. 
+    a. $$9 \cdot 9 \cdot 8 \cdot 7 = `r n <- 9*9*8*7; n`$$
+    b. $$9 \cdot 9 \cdot 8 \cdot 7 - 8 \cdot 8 \cdot 7 = `r n <- 9*9*8*7 -  8*8*7; n`$$
+6. $$40^3 = `r n <- 40**3; n`$$

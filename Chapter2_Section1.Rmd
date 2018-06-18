@@ -1,0 +1,40 @@
+---
+title: "Chapter 2, Section 1"
+output:
+  html_notebook: default
+  html_document: default
+  pdf_document:
+    keep_tex: yes
+---
+
+```{r include=FALSE} 
+knitr::opts_chunk$set(options(scipen = 999))
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+1. `r x <- 26**3; x < 20000`. There are 20,000 inhabitants and $$26^3 = `r x`$$ possibilities for 3 initials
+2. `r x <- 26^3 * 10^3; x > 1700000`. There are 1,700,000 books and $$26^3 \cdot 10^3 = `r x`$$ possible encodings
+3.
+    a. $$3^1 + 3^2 + 3^3 = `r n <- 3^1 + 3^2 + 3^3; n`$$
+    b. $$4^1 + 4^2 + 4^3 + 4^4 = `r n <- 4^1 + 4^2 + 4^3 + 4^4; n`$$
+    c. $$2 \cdot 4^3 = `r n <- 2 * 4^3; n`$$
+4. 
+    a. $$8^3 \cdot 10^5 = `r n <- 8^3 * 10^5; n`$$
+    b. $$8 \cdot 2 \cdot 10 \cdot 8^3 \cdot 10^5 = `r n <- 8*2*10*8^3*10^5; n`$$
+5. $$\lceil log_2 36 \rceil = `r n <- ceiling(log2(36)); n`$$
+6. $$2^{m \cdot n}$$
+7. $$(2^4 \cdot 3) - 1 = `r n <- (2^4*3)-1; n`$$
+8. $$10^6 - 9^6 = `r n <- 10^6 - 9^6; n`$$
+9.
+10.
+11.
+12.
+    a. $$2^p$$
+    b. $$2^{p}-1$$
+13.
+    a. $$2^m \cdot 2^{p-m}$$
+    b. $$2^{m-1} \cdot 2^{p-m}$$
+    c. $$$$
+14.
+    a. $$3 \cdot 2 \cdot 3 = `r n <- 3 * 2 * 3; n`$$
+    b. $$2^{3 \cdot 2 \cdot 3}$$
